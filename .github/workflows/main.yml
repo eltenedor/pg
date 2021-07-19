@@ -9,7 +9,9 @@ jobs:
     container: perl:latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          path: pg
       - name: run a simple unit test
         run: |
           cpanm Data::Dump
-          perl t/macros/pgaux.t
+          perl pg/t/macros/pgaux.t
